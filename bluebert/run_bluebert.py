@@ -246,6 +246,30 @@ class BlueBERTProcessor(DataProcessor):
         return examples
 
 
+class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["treats", "false"]
+
+class BiolinkChemicalToGeneProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["positively_regulates", "negatively_regulates", "false"]
+
+class BiolinkDiseaseToPhenotypeProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["has_symptom", "false"]
+
+class BiolinkGeneToGeneProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["positively_regulates", "negatively_regulates", "false"]
+
+class BiolinkGeneToDiseaseProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["causes", "false"]
+
+class BiolinkGeneToExpressionSiteProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["expressed_in", "false"]
+
 class ChemProtProcessor(BlueBERTProcessor):
     def get_labels(self):
         """See base class."""
@@ -708,8 +732,16 @@ def convert_examples_to_features(examples, label_list, max_seq_length,
 
 def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
+    
+class ChemProtProcessor(BlueBERTProcessor):
 
     processors = {
+        "bl:ChemicalToDisease": BiolinkChemicalToDiseaseProcessor,
+        "bl:ChemicalToGene": BiolinkChemicalToGeneProcessor,
+        "bl:DiseaseToPhenotype": BiolinkDiseaseToPhenotypeProcessor,
+        "bl:GeneToGene": BiolinkGeneToGeneProcessor,
+        "bl:GeneToDisease": BiolinkGeneToDiseaseProcessor,
+        "bl:GeneToExpressionSite": BiolinkGeneToExpressionSiteProcessor,
         "chemprot": ChemProtProcessor,
         'ddi': DDI2013Processor,
         'mednli': MedNLIProcessor,

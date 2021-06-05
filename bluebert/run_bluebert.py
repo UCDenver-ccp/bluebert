@@ -734,12 +734,12 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
-        "bl:ChemicalToDisease": BiolinkChemicalToDiseaseProcessor,
-        "bl:ChemicalToGene": BiolinkChemicalToGeneProcessor,
-        "bl:DiseaseToPhenotype": BiolinkDiseaseToPhenotypeProcessor,
-        "bl:GeneToGene": BiolinkGeneToGeneProcessor,
-        "bl:GeneToDisease": BiolinkGeneToDiseaseProcessor,
-        "bl:GeneToExpressionSite": BiolinkGeneToExpressionSiteProcessor,
+        "bl:chemicaltodisease": BiolinkChemicalToDiseaseProcessor,
+        "bl:chemicaltogene": BiolinkChemicalToGeneProcessor,
+        "bl:diseasetophenotype": BiolinkDiseaseToPhenotypeProcessor,
+        "bl:genetogene": BiolinkGeneToGeneProcessor,
+        "bl:genetodisease": BiolinkGeneToDiseaseProcessor,
+        "bl:genetoexpressionsite": BiolinkGeneToExpressionSiteProcessor,
         "chemprot": ChemProtProcessor,
         'ddi': DDI2013Processor,
         'mednli': MedNLIProcessor,

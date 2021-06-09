@@ -734,7 +734,7 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
-        "bl_chemical_to_disease_of_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,
+        "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,
         "bl_chemical_to_gene": BiolinkChemicalToGeneProcessor,
         "bl_disease_to_phenotypic_feature": BiolinkDiseaseToPhenotypeProcessor,
         "bl_gene_regulatory_relationship": BiolinkGeneToGeneProcessor,

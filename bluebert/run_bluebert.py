@@ -264,7 +264,11 @@ class BiolinkGeneToGeneProcessor(BlueBERTProcessor):
 
 class BiolinkGeneToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
-        return ["causes", "false"]
+        return ["contributes_to", "false"]
+
+class BiolinkGeneLossGainOfFunctionToDiseaseProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["contributes_to_via_loss_of_function", "contributes_to_via_gain_of_function", "false"]
 
 class BiolinkGeneToExpressionSiteProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -740,6 +744,7 @@ def main(_):
         "bl_gene_regulatory_relationship": BiolinkGeneToGeneProcessor,
         "bl_gene_to_disease": BiolinkGeneToDiseaseProcessor,
         "bl_gene_to_expression_site": BiolinkGeneToExpressionSiteProcessor,
+        "bl_gene_loss_gain_of_function_to_disease": BiolinkGeneLossGainOfFunctionToDiseaseProcessor,
         "chemprot": ChemProtProcessor,
         'ddi': DDI2013Processor,
         'mednli': MedNLIProcessor,

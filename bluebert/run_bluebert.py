@@ -248,7 +248,7 @@ class BlueBERTProcessor(DataProcessor):
 
 class CraftProcessor(BlueBERTProcessor):
     def get_labels(self):
-        return ["bears_constitution_of_or_situatedness_at_or_possession_by_or_derivation_from", "false"]
+        return ["bears_constitution_of_or_situatedness_at_or_possession_by_or_derivation_from", "coexists_as", "realizes_or_attribute_or_bearer_of_occurrence_in_or_possession_by", "realizes_or_bears_or_is_attribute_of_derivation_or_situatedness_or_possession_from", "false"]
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):

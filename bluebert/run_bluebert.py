@@ -248,7 +248,7 @@ class BlueBERTProcessor(DataProcessor):
 
 class CraftProcessor(BlueBERTProcessor):
     def get_labels(self):
-        return ["bears_constitution_of_or_situatedness_at_or_possession_by_or_derivation_from", "null"]
+        return ["bears_constitution_of_or_situatedness_at_or_possession_by_or_derivation_from", "false"]
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):

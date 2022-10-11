@@ -246,6 +246,10 @@ class BlueBERTProcessor(DataProcessor):
         return examples
 
 
+class CraftProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["bears_constitution_of_or_situatedness_at_or_possession_by_or_derivation_from", "null"]
+
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
         return ["treats", "contributes_to", "false"]
@@ -738,6 +742,7 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
+        "craft": CraftProcessor,
         "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,
         "bl_chemical_to_gene": BiolinkChemicalToGeneProcessor,
         "bl_disease_to_phenotypic_feature": BiolinkDiseaseToPhenotypeProcessor,

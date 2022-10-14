@@ -252,7 +252,7 @@ class CraftProcessor(BlueBERTProcessor):
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
-        return ["treats", "contributes_to", "false"]
+        return ["treats", "causes_or_contributes_to", "false"]
 
 class BiolinkChemicalToGeneProcessor(BlueBERTProcessor):
     def get_labels(self):

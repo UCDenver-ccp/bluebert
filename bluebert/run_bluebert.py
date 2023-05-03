@@ -250,6 +250,16 @@ class CraftProcessor(BlueBERTProcessor):
     def get_labels(self):
         return ["bears_constitution_of_or_situatedness_at_or_possession_by_or_derivation_from", "coexists_as", "realizes_or_attribute_or_bearer_of_occurrence_in_or_possession_by", "realizes_or_bears_or_is_attribute_of_derivation_or_situatedness_or_possession_from", "false"]
 
+class CraftProcessor_Influence(BlueBERTProcessor):
+    def get_labels(self):
+        return ["http://ccp.cuanschutz.edu/obo/ext/coexists_as",
+					"http://ccp.cuanschutz.edu/obo/ext/occurrence_or_attribute_or_effect_brought_about_or_carried_out_by",
+					"http://ccp.cuanschutz.edu/obo/ext/occurrence_or_attribute_or_bearer_of_influence_on",
+					"http://ccp.cuanschutz.edu/obo/ext/has_effect_of_causal_activity",
+					"http://ccp.cuanschutz.edu/obo/ext/has_attribute_of_being_agentive_or_causal_or_its_realization_with",
+					"http://ccp.cuanschutz.edu/obo/ext/has_attribute_of_being_influenced_or_its_realization_with", "false"]
+
+
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
         return ["treats", "causes_or_contributes_to", "false"]
@@ -742,6 +752,7 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
+        "craft_influence": CraftProcessor_Influence,
         "craft_relations": CraftProcessor,
         "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,
         "bl_chemical_to_gene": BiolinkChemicalToGeneProcessor,

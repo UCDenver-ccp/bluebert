@@ -252,12 +252,13 @@ class CraftProcessor(BlueBERTProcessor):
 
 class CraftProcessor_Influence(BlueBERTProcessor):
     def get_labels(self):
-        return ["http://ccp.cuanschutz.edu/obo/ext/coexists_as",
-					"http://ccp.cuanschutz.edu/obo/ext/occurrence_or_attribute_or_effect_brought_about_or_carried_out_by",
-					"http://ccp.cuanschutz.edu/obo/ext/occurrence_or_attribute_or_bearer_of_influence_on",
-					"http://ccp.cuanschutz.edu/obo/ext/has_effect_of_causal_activity",
-					"http://ccp.cuanschutz.edu/obo/ext/has_attribute_of_being_agentive_or_causal_or_its_realization_with",
-					"http://ccp.cuanschutz.edu/obo/ext/has_attribute_of_being_influenced_or_its_realization_with", "false"]
+        return ["coexists_as",
+					"occurrence_or_attribute_or_effect_brought_about_or_carried_out_by",
+					"occurrence_or_attribute_or_bearer_of_influence_on",
+					"has_effect_of_causal_activity",
+					"has_attribute_of_being_agentive_or_causal_or_its_realization_with",
+					"has_attribute_of_being_influenced_or_its_realization_with", 
+                    "false"]
 
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):

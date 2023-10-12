@@ -260,6 +260,13 @@ class CraftProcessor_Influence(BlueBERTProcessor):
 					"has_attribute_of_being_influenced_or_its_realization_with", 
                     "false"]
 
+class ThreeLabelProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["label1", "label2", "false"]
+
+class TwoLabelProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["label1", "false"]
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -753,6 +760,8 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
+        "three_label": ThreeLabelProcessor,
+        "two_label": TwoLabelProcessor,
         "craft_influence": CraftProcessor_Influence,
         "craft_relations": CraftProcessor,
         "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,

@@ -760,8 +760,8 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
-        "three_label": ThreeLabelProcessor,
-        "two_label": TwoLabelProcessor,
+        "craft_pr_uberon": ThreeLabelProcessor,
+        "craft_pr_taxon": TwoLabelProcessor,
         "craft_influence": CraftProcessor_Influence,
         "craft_relations": CraftProcessor,
         "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,

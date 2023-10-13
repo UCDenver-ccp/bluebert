@@ -761,7 +761,7 @@ def main(_):
 
     processors = {
         "craft_pr_uberon": ThreeLabelProcessor,
-        "craft_pr_taxon": TwoLabelProcessor,
+        "craft_pr_taxon": ThreeLabelProcessor,
         "craft_influence": CraftProcessor_Influence,
         "craft_relations": CraftProcessor,
         "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,

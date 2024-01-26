@@ -316,8 +316,6 @@ class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
 class BiolinkChemicalToDiseaseProcessor_GPT(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "ameliorates",
-            "associated_with",
             "associated_with_resistance_to",
             "associated_with_sensitivity_to",
             "decreases_risk_for",

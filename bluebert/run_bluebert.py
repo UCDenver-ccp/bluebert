@@ -310,11 +310,7 @@ class TwoLabelProcessor(BlueBERTProcessor):
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
-        return ["treats", "causes_or_contributes_to", "false"]
-
-
-class BiolinkChemicalToDiseaseProcessor_GPT(BlueBERTProcessor):
-    def get_labels(self):
+        # return ["treats", "causes_or_contributes_to", "false"]
         return [
             "associated_with_resistance_to",
             "associated_with_sensitivity_to",
@@ -333,7 +329,6 @@ class BiolinkChemicalToDiseaseProcessor_GPT(BlueBERTProcessor):
             "used_in_diagnosis_of",
             "other",
         ]
-
 
 class BiolinkChemicalToGeneProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -876,7 +871,6 @@ def main(_):
         "craft_influence": CraftProcessor_Influence,
         "craft_relations": CraftProcessor,
         "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,
-        "bl_chemical_to_disease_or_phenotypic_feature_gpt": BiolinkChemicalToDiseaseProcessor_GPT,
         "bl_chemical_to_gene": BiolinkChemicalToGeneProcessor,
         "bl_disease_to_phenotypic_feature": BiolinkDiseaseToPhenotypeProcessor,
         "bl_gene_regulatory_relationship": BiolinkGeneToGeneProcessor,

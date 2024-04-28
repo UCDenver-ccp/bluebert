@@ -313,12 +313,10 @@ class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
         # return ["treats", "causes_or_contributes_to", "false"]
         return [
             "associated_with_resistance_to",
-            "associated_with_sensitivity_to",
             "decreases_risk_for",
             "exacerbates",
             "exposure_is_origin_of",
             "has_excessive_amount_in",
-            "has_no_effect_on",
             "increases_risk_for",
             "is_biomarker_for",
             "is_contraindicated_for",
@@ -326,7 +324,6 @@ class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
             "prevents",
             "results_in_side_effect",
             "treats",
-            "used_in_diagnosis_of",
             "other",
         ]
 

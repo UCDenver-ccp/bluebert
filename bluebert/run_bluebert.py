@@ -372,6 +372,17 @@ class TwoLabelProcessor(BlueBERTProcessor):
     def get_labels(self):
         return ["label1", "false"]
 
+class BiolinkChemicalToCellProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "metabolism",
+            "modulation",
+            "other",
+            "response",
+            "secretion",
+            "synthesis",
+            "transport"
+        ]
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -940,6 +951,7 @@ def main(_):
         "bl_gene_to_disease": BiolinkGeneToDiseaseProcessor,
         "bl_gene_to_expression_site": BiolinkGeneToExpressionSiteProcessor,
         "bl_gene_loss_gain_of_function_to_disease": BiolinkGeneLossGainOfFunctionToDiseaseProcessor,
+        "bl_chemical_to_cell": BiolinkChemicalToCellProcessor,
         "chemprot": ChemProtProcessor,
         "ddi": DDI2013Processor,
         "mednli": MedNLIProcessor,

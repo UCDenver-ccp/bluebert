@@ -383,6 +383,16 @@ class BiolinkChemicalToCellProcessor(BlueBERTProcessor):
             "synthesis",
             "transport"
         ]
+    
+class BiolinkCellToDiseaseProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "death",
+            "dysfunction",
+            "hyperactivity",
+            "other",
+            "proliferation"
+        ]
 
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -952,6 +962,7 @@ def main(_):
         "bl_gene_to_expression_site": BiolinkGeneToExpressionSiteProcessor,
         "bl_gene_loss_gain_of_function_to_disease": BiolinkGeneLossGainOfFunctionToDiseaseProcessor,
         "bl_chemical_to_cell": BiolinkChemicalToCellProcessor,
+        "bl_cell_to_disease": BiolinkCellToDiseaseProcessor,
         "chemprot": ChemProtProcessor,
         "ddi": DDI2013Processor,
         "mednli": MedNLIProcessor,

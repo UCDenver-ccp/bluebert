@@ -387,7 +387,6 @@ class BiolinkChemicalToCellProcessor(BlueBERTProcessor):
 class BiolinkCellToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "death",
             "dysfunction",
             "hyperactivity",
             "other",

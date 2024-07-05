@@ -393,6 +393,14 @@ class BiolinkCellToDiseaseProcessor(BlueBERTProcessor):
             "proliferation"
         ]
 
+class BiolinkChemicalToChemicalProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "co-treat",
+            "ddi",
+            "other"
+        ]
+
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
         # return ["treats", "causes_or_contributes_to", "false"]
@@ -962,6 +970,7 @@ def main(_):
         "bl_gene_loss_gain_of_function_to_disease": BiolinkGeneLossGainOfFunctionToDiseaseProcessor,
         "bl_chemical_to_cell": BiolinkChemicalToCellProcessor,
         "bl_cell_to_disease": BiolinkCellToDiseaseProcessor,
+        "bl_chemical_to_chemical": BiolinkChemicalToChemicalProcessor,
         "chemprot": ChemProtProcessor,
         "ddi": DDI2013Processor,
         "mednli": MedNLIProcessor,

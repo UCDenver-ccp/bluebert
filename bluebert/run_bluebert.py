@@ -420,10 +420,13 @@ class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
             "other",
         ]
 
+# class BiolinkChemicalToGeneProcessor(BlueBERTProcessor):
+#     def get_labels(self):
+#         return ["positively_regulates", "negatively_regulates", "false"]
+
 class BiolinkChemicalToGeneProcessor(BlueBERTProcessor):
     def get_labels(self):
-        return ["positively_regulates", "negatively_regulates", "false"]
-
+        return [ "activates", "modulates", "deactivates", "metabolized_by", "transported_by", "other"]
 
 class BiolinkDiseaseToPhenotypeProcessor(BlueBERTProcessor):
     def get_labels(self):

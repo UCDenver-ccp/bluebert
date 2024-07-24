@@ -964,6 +964,7 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
+        "craft_1_vs_all": TwoLabelProcessor,
         "craft_pr_uberon": ThreeLabelProcessor,
         "craft_pr_taxon": ThreeLabelProcessor,
         "craft_100": Craft100Processor,

@@ -404,19 +404,30 @@ class BiolinkChemicalToChemicalProcessor(BlueBERTProcessor):
 class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
         # return ["treats", "causes_or_contributes_to", "false"]
+        # return [
+        #     "associated_with_resistance_to",
+        #     "decreases_risk_for",
+        #     "exacerbates",
+        #     "exposure_is_origin_of",
+        #     "has_excessive_amount_in",
+        #     "increases_risk_for",
+        #     "is_biomarker_for",
+        #     "is_contraindicated_for",
+        #     "is_deficient_in",
+        #     "prevents",
+        #     "results_in_side_effect",
+        #     "treats",
+        #     "other",
+        # ]
         return [
-            "associated_with_resistance_to",
-            "decreases_risk_for",
+            "has_unintended_effect_of",
+            "resistance_is_associated_with",
+            "is_contraindicated_in",
             "exacerbates",
-            "exposure_is_origin_of",
-            "has_excessive_amount_in",
             "increases_risk_for",
-            "is_biomarker_for",
-            "is_contraindicated_for",
-            "is_deficient_in",
+            "decreases_risk_for",
             "prevents",
-            "results_in_side_effect",
-            "treats",
+            "is_used_to_treat",
             "other",
         ]
 

@@ -390,6 +390,15 @@ class BiolinkChemicalToCellProcessor(BlueBERTProcessor):
             "metabolizes",
             "other"
         ]
+
+class BiolinkGeneToGeneProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "interacts_with",
+            "activates",
+            "deactivates",
+            "other"
+        ]
     
 class BiolinkCellToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -456,7 +465,7 @@ class BiolinkDiseaseToPhenotypeProcessor(BlueBERTProcessor):
         return ["has_symptom", "false"]
 
 
-class BiolinkGeneToGeneProcessor(BlueBERTProcessor):
+class BiolinkGeneRegulatoryRelationshipProcessor(BlueBERTProcessor):
     def get_labels(self):
         return ["positively_regulates", "negatively_regulates", "false"]
 
@@ -991,7 +1000,8 @@ def main(_):
         "bl_chemical_to_disease_or_phenotypic_feature": BiolinkChemicalToDiseaseProcessor,
         "bl_chemical_to_gene": BiolinkChemicalToGeneProcessor,
         "bl_disease_to_phenotypic_feature": BiolinkDiseaseToPhenotypeProcessor,
-        "bl_gene_regulatory_relationship": BiolinkGeneToGeneProcessor,
+        "bl_gene_to_gene": BiolinkGeneToGeneProcessor,
+        "bl_gene_regulatory_relationship": BiolinkGeneRegulatoryRelationshipProcessor,
         "bl_gene_to_disease": BiolinkGeneToDiseaseProcessor,
         "bl_gene_to_expression_site": BiolinkGeneToExpressionSiteProcessor,
         "bl_gene_loss_gain_of_function_to_disease": BiolinkGeneLossGainOfFunctionToDiseaseProcessor,

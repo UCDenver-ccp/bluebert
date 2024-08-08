@@ -374,14 +374,21 @@ class TwoLabelProcessor(BlueBERTProcessor):
 
 class BiolinkChemicalToCellProcessor(BlueBERTProcessor):
     def get_labels(self):
+        # return [
+        #     "metabolism",
+        #     "modulation",
+        #     "other",
+        #     "response",
+        #     "secretion",
+        #     "synthesis",
+        #     "transport"
+        # ]
         return [
-            "metabolism",
-            "modulation",
-            "other",
-            "response",
-            "secretion",
-            "synthesis",
-            "transport"
+            "secretes",
+            "stores",
+            "responds_to",
+            "metabolizes",
+            "other"
         ]
     
 class BiolinkCellToDiseaseProcessor(BlueBERTProcessor):

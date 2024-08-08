@@ -399,6 +399,15 @@ class BiolinkGeneToGeneProcessor(BlueBERTProcessor):
             "deactivates",
             "other"
         ]
+
+class BiolinkGeneToProcessProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "participates_in",
+            "enhances",
+            "inhibits",
+            "other"
+        ]
     
 class BiolinkCellToDiseaseProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -1009,6 +1018,7 @@ def main(_):
         "bl_cell_to_disease": BiolinkCellToDiseaseProcessor,
         "bl_chemical_to_chemical": BiolinkChemicalToChemicalProcessor,
         "bl_chemical_to_process": BiolinkChemicalToProcessProcessor,
+        "bl_gene_to_process": BiolinkGeneToProcessProcessor,
         "chemprot": ChemProtProcessor,
         "ddi": DDI2013Processor,
         "mednli": MedNLIProcessor,

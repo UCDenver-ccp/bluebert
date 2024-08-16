@@ -417,10 +417,16 @@ class BiolinkGeneToProcessProcessor(BlueBERTProcessor):
             "other"
         ]
 
-class BiolinkLocatedOccursInProcessor(BlueBERTProcessor):
+class BiolinkGeneToLocationProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
             "located_in",
+            "other"
+        ]
+
+class BiolinkProcessToLocationProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
             "occurs_in",
             "other"
         ]
@@ -1035,7 +1041,8 @@ def main(_):
         "bl_chemical_to_chemical": BiolinkChemicalToChemicalProcessor,
         "bl_chemical_to_process": BiolinkChemicalToProcessProcessor,
         "bl_gene_to_process": BiolinkGeneToProcessProcessor,
-        "bl_located_or_occurs_in": BiolinkLocatedOccursInProcessor,
+        "bl_gene_to_location": BiolinkGeneToLocationProcessor,
+        "bl_process_to_location": BiolinkProcessToLocationProcessor,
         "bl_associated_with_disease": BiolinkAssociatedWithDiseaseProcessor,
         "chemprot": ChemProtProcessor,
         "ddi": DDI2013Processor,

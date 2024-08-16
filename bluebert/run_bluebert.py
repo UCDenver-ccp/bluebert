@@ -392,7 +392,35 @@ class BiolinkChemicalToCellProcessor(BlueBERTProcessor):
         ]
 
 
-class BiolinkAssociatedWithDiseaseProcessor(BlueBERTProcessor):
+class BiolinkDiseaseAssociatedWithAnatomyProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "associated_with",
+            "other"
+        ]
+
+class BiolinkDiseaseAssociatedWithCellProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "associated_with",
+            "other"
+        ]
+
+class BiolinkDiseaseAssociatedWithGeneProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "associated_with",
+            "other"
+        ]
+
+class BiolinkDiseaseAssociatedWithPhenotypeProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "associated_with",
+            "other"
+        ]
+
+class BiolinkDiseaseAssociatedWithProcessProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
             "associated_with",
@@ -1043,7 +1071,11 @@ def main(_):
         "bl_gene_to_process": BiolinkGeneToProcessProcessor,
         "bl_gene_to_location": BiolinkGeneToLocationProcessor,
         "bl_process_to_location": BiolinkProcessToLocationProcessor,
-        "bl_associated_with_disease": BiolinkAssociatedWithDiseaseProcessor,
+        "bl_disease_to_anatomy": BiolinkDiseaseAssociatedWithAnatomyProcessor,
+        "bl_disease_to_cell": BiolinkDiseaseAssociatedWithCellProcessor,
+        "bl_disease_to_gene": BiolinkDiseaseAssociatedWithGeneProcessor,
+        "bl_disease_to_phenotype": BiolinkDiseaseAssociatedWithPhenotypeProcessor,
+        "bl_disease_to_process": BiolinkDiseaseAssociatedWithProcessProcessor,
         "chemprot": ChemProtProcessor,
         "ddi": DDI2013Processor,
         "mednli": MedNLIProcessor,

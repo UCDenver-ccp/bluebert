@@ -395,35 +395,35 @@ class BiolinkChemicalToCellProcessor(BlueBERTProcessor):
 class BiolinkDiseaseAssociatedWithAnatomyProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "associated_with",
+            "has_basis_in",
             "other"
         ]
 
 class BiolinkDiseaseAssociatedWithCellProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "associated_with",
+            "has_basis_in",
             "other"
         ]
 
 class BiolinkDiseaseAssociatedWithGeneProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "associated_with",
+            "has_basis_in",
             "other"
         ]
 
 class BiolinkDiseaseAssociatedWithPhenotypeProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "associated_with",
+            "has_phenotype",
             "other"
         ]
 
 class BiolinkDiseaseAssociatedWithProcessProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "associated_with",
+            "has_basis_in",
             "other"
         ]
 

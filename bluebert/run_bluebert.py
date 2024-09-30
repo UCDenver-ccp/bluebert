@@ -501,7 +501,6 @@ class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
             "exacerbates",
             "increases_risk_for",
             "decreases_risk_for",
-            "prevents",
             "is_used_to_treat",
             "other",
         ]

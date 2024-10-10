@@ -430,9 +430,10 @@ class BiolinkDiseaseAssociatedWithProcessProcessor(BlueBERTProcessor):
 class BiolinkGeneToGeneProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "binds",
+            "modulates",
             "activates",
             "deactivates",
+            "physically_interacts_with",
             "other"
         ]
 

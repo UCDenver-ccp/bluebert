@@ -456,7 +456,7 @@ class BiolinkGeneToLocationProcessor(BlueBERTProcessor):
 class BiolinkProcessToLocationProcessor(BlueBERTProcessor):
     def get_labels(self):
         return [
-            "occurs_in",
+            "participates_in",
             "other"
         ]
     

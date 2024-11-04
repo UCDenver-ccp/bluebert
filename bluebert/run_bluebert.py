@@ -363,6 +363,10 @@ class CraftProcessor_Influence(BlueBERTProcessor):
         ]
 
 
+class DoubleNegativeProcessor(BlueBERTProcessor):
+    def get_labels(self):
+        return ["double_neg", "false"]
+
 class ThreeLabelProcessor(BlueBERTProcessor):
     def get_labels(self):
         return ["label1", "label2", "false"]
@@ -1050,6 +1054,7 @@ def main(_):
     tf.logging.set_verbosity(tf.logging.INFO)
 
     processors = {
+        "double_neg": DoubleNegativeProcessor,
         "craft_1_vs_all": TwoLabelProcessor,
         "craft_pr_uberon": ThreeLabelProcessor,
         "craft_pr_taxon": ThreeLabelProcessor,

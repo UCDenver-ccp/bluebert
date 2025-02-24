@@ -362,6 +362,31 @@ class CraftProcessor_Influence(BlueBERTProcessor):
             "false",
         ]
 
+class TmkpProcessor_v1(BlueBERTProcessor):
+    def get_labels(self):
+        return [
+            "causes_or_increases_risk_of",
+            "decreases_expression_activity_or_abundance_of",
+            "exports",
+            "has_symptom",
+            "increases_expression_activity_or_abundance_of",
+            "interacts_with",
+            "involves",
+            "located_or_expressed_in",
+            "metabolized_by",
+            "metabolizes",
+            "modulates",
+            "negatively_affects",
+            "occurs_at_or_involves",
+            "other",
+            "participates_in",
+            "positively_affects",
+            "responds_to",
+            "stores",
+            "transported_by",
+            "treats_or_decreases_risk_of"
+        ]
+
 
 class DoubleNegativeProcessor(BlueBERTProcessor):
     def get_labels(self):
@@ -1058,6 +1083,7 @@ def main(_):
         "craft_1_vs_all": TwoLabelProcessor,
         "craft_pr_uberon": ThreeLabelProcessor,
         "craft_pr_taxon": ThreeLabelProcessor,
+        "tmkpv1": TmkpProcessor_v1,
         "craft_100": Craft100Processor,
         "craft_influence": CraftProcessor_Influence,
         "craft_relations": CraftProcessor,

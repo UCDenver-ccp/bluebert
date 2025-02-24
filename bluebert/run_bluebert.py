@@ -1083,7 +1083,7 @@ def main(_):
         "craft_1_vs_all": TwoLabelProcessor,
         "craft_pr_uberon": ThreeLabelProcessor,
         "craft_pr_taxon": ThreeLabelProcessor,
-        "tmkpv1": TmkpProcessor_v1,
+        "tmkp": TmkpProcessor_v1,
         "craft_100": Craft100Processor,
         "craft_influence": CraftProcessor_Influence,
         "craft_relations": CraftProcessor,

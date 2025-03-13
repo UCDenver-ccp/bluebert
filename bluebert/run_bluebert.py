@@ -524,16 +524,24 @@ class BiolinkChemicalToDiseaseProcessor(BlueBERTProcessor):
         #     "treats",
         #     "other",
         # ]
+        # return [
+        #     "has_unintended_effect_of",
+        #     "resistance_is_associated_with",
+        #     "is_contraindicated_in",
+        #     "exacerbates",
+        #     "increases_risk_for",
+        #     "decreases_risk_for",
+        #     "is_used_to_treat",
+        #     "other",
+        # ]
         return [
-            "has_unintended_effect_of",
-            "resistance_is_associated_with",
-            "is_contraindicated_in",
-            "exacerbates",
-            "increases_risk_for",
-            "decreases_risk_for",
-            "is_used_to_treat",
+            "treats",
+            "causes",
+            "resistance",
             "other",
         ]
+
+
 
 # class BiolinkChemicalToGeneProcessor(BlueBERTProcessor):
 #     def get_labels(self):
